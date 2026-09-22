@@ -1,8 +1,9 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:recommended"
+    "github>MooseGooseConsulting/renovate-config"
   ],
+  "forkProcessing": "enabled",
   "ignorePaths": [
     "crates/workspace-hack/Cargo.toml"
   ],
@@ -11,15 +12,13 @@
       "matchManagers": ["cargo"],
       "groupName": "rust dependencies",
       "matchUpdateTypes": ["minor", "patch"],
-      "automerge": true,
-      "automergeType": "pr"
+      "automerge": false
     },
     {
       "matchManagers": ["github-actions"],
       "groupName": "github actions",
       "matchUpdateTypes": ["minor", "patch"],
-      "automerge": true,
-      "automergeType": "pr"
+      "automerge": false
     },
     {
       "description": "Keep legacy Python runner labels pinned until Python 3.7 support is dropped.",
@@ -32,22 +31,19 @@
       "matchManagers": ["pep621"],
       "groupName": "python dependencies",
       "matchUpdateTypes": ["minor", "patch"],
-      "automerge": true,
-      "automergeType": "pr"
+      "automerge": false
     },
     {
       "matchManagers": ["npm"],
       "groupName": "docs dependencies",
       "matchUpdateTypes": ["minor", "patch"],
-      "automerge": true,
-      "automergeType": "pr"
+      "automerge": false
     },
     {
       "matchManagers": ["pre-commit"],
       "groupName": "pre-commit hooks",
       "matchUpdateTypes": ["minor", "patch"],
-      "automerge": true,
-      "automergeType": "pr"
+      "automerge": false
     }
   ]
 }
